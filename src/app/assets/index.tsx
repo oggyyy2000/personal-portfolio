@@ -224,7 +224,7 @@ export const projectsData = [
     name: "GreenLeafGardens.biz",
     desc: "An online store and community hub for gardening enthusiasts, featuring a wide range of plants, gardening tools, and expert advice.",
     url: "/projects/image-6.jpg",
-    tech: ["ReactJS", "TailwindCSS", , "CSS", "FramerMotion"],
+    tech: ["ReactJS", "TailwindCSS", "CSS", "FramerMotion"],
   },
   {
     name: "PixelPerfectDesigns.info",
