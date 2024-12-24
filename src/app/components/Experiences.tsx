@@ -20,7 +20,7 @@ const Experiences = () => {
     <div className="min-h-screen relative px-96 py-20">
       <Heading text="Experiences & Education" />
       <Image
-        className="absolute -top-4 right-96 opacity-70 lg:hidden"
+        className="absolute -top-4 right-96 opacity-90 lg:hidden"
         src="/education.png"
         alt="Experiences Image"
         width={400}
@@ -45,20 +45,16 @@ const Experiences = () => {
               transition={{ duration: 0.7, type: "spring", stiffness: 50 }}
               className="relative flex flex-col gap-y-3 rounded-md border border-red-400 bg-white p-4 tracking-wide sm:text-sm"
             >
-              <h1 className="text-xl sm:text-lg font-light text-gray-700">
-                {item.title}
-              </h1>
+              <h1 className="text-xl sm:text-lg">{item.title}</h1>
               <p className="text-gray-800">
-                <span className="block font-light">Education:</span>
-                <span className="block pl-2 font-extralight">
-                  {item.education}
-                </span>
+                <span className="block">Education:</span>
+                <span className="block pl-2 font-light">{item.education}</span>
               </p>
               <div className="text-gray-800">
-                <span className="font-light">Experience:</span>
+                <span className="block">Experience:</span>
                 <ul className="pl-2">
                   {item.experience.map((exp, index) => (
-                    <li key={index} className="my-1 font-extralight">
+                    <li key={index} className="my-1 font-light">
                       {exp}
                     </li>
                   ))}
@@ -73,7 +69,7 @@ const Experiences = () => {
               </span>
             </motion.div>
             <div
-              className={`absolute top-20 w-14 aspect-square grid place-items-center text-red-400 font-light border border-gray-300 rounded-full -translate-y-1/2 z-10 bg-white ${
+              className={`absolute top-20 w-14 aspect-square grid place-items-center text-red-400 border border-gray-300 rounded-full -translate-y-1/2 z-10 bg-white ${
                 index % 2 === 0
                   ? "left-full -translate-x-1/2 lg:left-1/2"
                   : "right-full translate-x-1/2 lg:right-1/2"
