@@ -46,6 +46,7 @@ const Hero = () => {
 
   return (
     <div
+      id="home"
       className="h-screen w-full grid place-items-center"
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}

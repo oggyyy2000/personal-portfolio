@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 
 const Contact = () => {
   return (
-    <div className="h-screen lg:h-auto py-20 lg:py-40 xs:pb-20 px-96">
+    <div
+      id="contact"
+      className="h-screen lg:h-auto py-20 lg:py-40 xs:pb-20 px-96"
+    >
       <Heading text="Get In Touch" />
       <div className="w-full h-full my-auto flex lg:flex-col justify-between lg:justify-center gap-x-20 lg:gap-x-0 gap-y-20 items-center">
         <motion.div
