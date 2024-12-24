@@ -1,5 +1,6 @@
 import Image from "next/image";
-
+import { motion } from "framer-motion";
+import { useState } from "react";
 export type Project = {
   name: string;
   desc: string;
@@ -13,24 +14,37 @@ export type ProjectsDataProps = {
 };
 
 const Project = ({ data, index }: ProjectsDataProps) => {
+  const [show, setShow] = useState<boolean>(false);
+
   return (
-    <div key={index} className="relative w-[350px] sm:w-full h-max border border-yellow-400 rounded-lg cursor-pointer">
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: index % 2 === 0 ? 100 : -100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, type: "spring", stiffness: 100 }}
+      className="relative w-[350px] sm:w-full h-max cursor-pointer"
+      onClick={() => setShow(!show)}
+    >
       <Image
-        className="rounded-lg opacity-80"
+        className="rounded-lg opacity-90"
         src={data.url}
         alt="Project Image"
         width={400}
         height={400}
       />
-      <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center gap-y-2 bg-white/95 p-6 rounded-lg hidden">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: show ? 1 : 0 }}
+        className="absolute top-0 w-full h-full flex flex-col items-center justify-center gap-y-2 bg-white/90 p-6 rounded-lg"
+      >
         <h2 className="text-lg font-bold tracking-wide text-gray-500">
           {data.name}
         </h2>
         <p className="text-justify text-gray-500 first-letter:pl-2">
           {data.desc}
         </p>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
