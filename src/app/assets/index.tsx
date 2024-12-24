@@ -53,7 +53,7 @@ export const downloadIcon = <RiDownloadLine />;
 export const arrowLeftIcon = <RiArrowLeftSFill />;
 
 export const aboutText =
-  " Hi, I'm Nick, a web developer & designer. I blend the technical  skills of web development with the creative aspects of web design. I code in HTML, CSS, JavaScript, React, NextJS... to build functional and responsive websites, while also using design tools like Photoshop and Figma to create visually appealing and user-friendly  interfaces. My role allows me to ensure that websites not only work well but also look great and provide an excellent user experience.";
+  " Hi, I'm Tuấn, a software engineer (but currently focusing more on creating and designing interfaces). I'm combining technical skills of software development with the creative aspects of interface design. I code in HTML, CSS, JavaScript, TypeScript, React, NextJS... to build functional and responsive softwares. My role allows me to ensure that softwares not only work well but also look great and provide an excellent user experience.";
 // End of AboutMe icons
 
 // Skills
