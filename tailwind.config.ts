@@ -18,8 +18,10 @@ const config: Config = {
       lg: { max: "1150px" },
       md: { max: "767px" },
       sm: { max: "639px" },
+      xs: { max: "393px" },
     },
   },
   plugins: [],
+  darkMode: "class",
 };
 export default config;
