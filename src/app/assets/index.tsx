@@ -502,5 +502,5 @@ export const arrowIcons = [
 // Toggle
 import { RiMoonFoggyFill, RiSunFoggyFill } from "@remixicon/react";
 
-export const sunIcon = <RiMoonFoggyFill />;
-export const moonIcon = <RiSunFoggyFill />;
+export const sunIcon = <RiSunFoggyFill />;
+export const moonIcon = <RiMoonFoggyFill />;
