@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { heroIcons } from "@/app/assets";
+import { heroIcons } from "@/assets";
 import { useMotionValue, useTransform, motion, useSpring } from "framer-motion";
 import { useState } from "react";
 
@@ -41,8 +41,8 @@ const Hero = () => {
   const xSpring = useSpring(x, { stiffness: 100, damping: 25 });
   const ySpring = useSpring(y, { stiffness: 100, damping: 25 });
 
-  const rotateX = useTransform(xSpring, [0, innerWidth], [45, -45]);
-  const rotateY = useTransform(ySpring, [0, innerHeight], [45, -45]);
+  const rotateX = useTransform(xSpring, [0, innerWidth], [-45, 45]);
+  const rotateY = useTransform(ySpring, [0, innerHeight], [10, -50]);
 
   return (
     <div
@@ -52,7 +52,13 @@ const Hero = () => {
       onMouseEnter={handleMouseEnter}
     >
       <div>
-        <div className="flex flex-col items-center justify-center gap-y-3 font-light capitalize">
+        <motion.div
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="flex flex-col items-center justify-center gap-y-3 font-light 
+        capitalize"
+        >
           <motion.div
             className="flex items-center justify-center"
             style={{
@@ -83,15 +89,23 @@ const Hero = () => {
             </motion.span>
           </motion.div>
           {/* tracking-wider is letter spacing*/}
-          <h1 className="text-center text-3xl font-bold tracking-wider text-gray-500 sm:text-2xl">
+          <h1
+            className="text-center text-3xl font-bold tracking-wider text-gray-500 sm:text-2xl 
+          dark:text-white transition-colors"
+          >
             My name is Nguyễn Minh Tuấn &
           </h1>
-          <p className="text-lg tracking-wider text-gray-700">
+          <p className="text-lg tracking-wider text-gray-700 dark:text-gray-200 transition-colors">
             I like creating web and app interface that are user-friendly and run
             smoothly 🥳
           </p>
-        </div>
-        <div className="mt-8 flex justify-center gap-x-10 text-3xl text-yellow-600 sm:text-2xl">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="mt-8 flex justify-center gap-x-10 text-3xl text-yellow-600 sm:text-2xl"
+        >
           {heroIcons.map((info, index) => (
             <a
               key={index}
@@ -101,15 +115,18 @@ const Hero = () => {
               {info.icon}
             </a>
           ))}
-        </div>
-        <a
-          href="#"
+        </motion.div>
+        <motion.a
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.7 }}
+          href="/#contact"
           className="mx-auto mt-7 block w-max rounded-lg bg-red-400 px-3 py-1 font-light capitalize tracking-wider text-white hover:bg-red-500 transition-colors"
           onMouseEnter={() => setButtonHover(true)}
           onMouseLeave={() => setButtonHover(false)}
         >
           Talk to me
-        </a>
+        </motion.a>
       </div>
     </div>
   );
