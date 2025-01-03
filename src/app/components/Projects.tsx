@@ -1,10 +1,9 @@
 "use client";
-
-import Heading from "./sub/Heading";
-import Project from "./sub/Project";
-import { projectsData, projectsButton } from "../assets";
 import { useState, useRef, useEffect } from "react";
 import { animate, motion } from "framer-motion";
+import Heading from "@/components/sub/Heading";
+import Project from "@/components/sub/Project";
+import { projectsData, projectsButton } from "@/assets";
 
 const Projects = () => {
   const [tech, setTech] = useState<string>("All");
@@ -28,7 +27,7 @@ const Projects = () => {
   }, [index]);
 
   return (
-    <div id="projects" className="min-h-screen py-20 px-80">
+    <div id="projects" className="min-h-screen py-20">
       <Heading text="Projects" />
       <div className="flex flex-wrap items-center justify-between gap-4 py-10">
         {projectsButton.map((button, index) => (
@@ -43,7 +42,7 @@ const Projects = () => {
               setTech(button);
               setIndex(index);
             }}
-            className="px-4 py-2 text-md tracking-wider"
+            className="px-4 py-2 text-md tracking-wider dark:text-white"
           >
             {button}
           </motion.button>

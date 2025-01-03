@@ -1,8 +1,8 @@
 "use client";
 
-import Heading from "@/app/components/sub/Heading";
+import Heading from "@/components/sub/Heading";
 import Image from "next/image";
-import { skillsData } from "@/app/assets";
+import { skillsData } from "@/assets";
 import { motion } from "framer-motion";
 
 const Skills = () => {
@@ -20,9 +20,12 @@ const Skills = () => {
     },
   };
   return (
-    <div id="skills" className="min-h-screen flex flex-col justify-center items-center gap-y-20 px-96">
+    <div
+      id="skills"
+      className="min-h-screen flex flex-col justify-center items-center gap-y-20"
+    >
       <Heading text="Skills" />
-      <div className="w-full flex flex-wrap justify-between gap-x-8 gap-y-10 lg:gap-y-6">
+      <div className="w-full flex flex-wrap justify-center gap-x-8 gap-y-10 lg:gap-y-6">
         {skillsData.map((skill, index) => {
           return (
             <motion.div

@@ -1,9 +1,9 @@
 "use client";
-import Heading from "@/app/components/sub/Heading";
-import Image from "next/image";
-import { arrowLeftIcon, experienceData } from "@/app/assets/index";
-import { motion, useScroll, useSpring } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { arrowLeftIcon, experienceData } from "@/assets/index";
+import Heading from "@/components/sub/Heading";
 
 const Experiences = () => {
   const date = new Date().getFullYear();
@@ -17,10 +17,10 @@ const Experiences = () => {
 
   const scrollY = useSpring(scrollYProgress, { stiffness: 200, damping: 20 });
   return (
-    <div id="experience" className="min-h-screen relative px-96 py-20">
+    <div id="experience" className="relative py-20">
       <Heading text="Experiences & Education" />
       <Image
-        className="absolute -top-4 right-96 opacity-90 lg:hidden"
+        className="absolute -top-4 right-0 opacity-90 lg:hidden"
         src="/education.png"
         alt="Experiences Image"
         width={400}
@@ -28,7 +28,8 @@ const Experiences = () => {
       />
       <div
         ref={containerRef}
-        className="w-full h-full flex flex-col justify-center items-center gap-y-10 lg:gap-y-20 py-10"
+        className="relative w-full h-full flex flex-col justify-center items-center gap-y-10 lg:gap-y-20 
+        py-10"
       >
         {experienceData.map((item, index) => (
           <div
@@ -43,14 +44,15 @@ const Experiences = () => {
               initial={{ opacity: 0, x: index % 2 === 0 ? -80 : 80 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7, type: "spring", stiffness: 50 }}
-              className="relative flex flex-col gap-y-3 rounded-md border border-red-400 bg-white p-4 tracking-wide sm:text-sm"
+              className="relative flex flex-col gap-y-3 rounded-md border border-red-400 
+              bg-white p-4 tracking-wide sm:text-sm dark:bg-zinc-700 transition-colors z-20"
             >
-              <h1 className="text-xl sm:text-lg">{item.title}</h1>
-              <p className="text-gray-800">
+              <h1 className="text-xl sm:text-lg dark:text-white">{item.title}</h1>
+              <p className="text-gray-800 dark:text-gray-100 transition-colors">
                 <span className="block">Education:</span>
                 <span className="block pl-2 font-light">{item.education}</span>
               </p>
-              <div className="text-gray-800">
+              <div className="text-gray-800 dark:text-gray-200 transition-colors">
                 <span className="block">Experience:</span>
                 <ul className="pl-2">
                   {item.experience.map((exp, index) => (
@@ -61,7 +63,7 @@ const Experiences = () => {
                 </ul>
               </div>
               <span
-                className={`absolute top-20 text-red-300 -translate-y-1/2 ${
+                className={`absolute top-20 text-red-300 -translate-y-1/2 lg:hidden ${
                   index % 2 === 0 ? "left-full rotate-180" : "right-full"
                 }`}
               >
@@ -82,7 +84,7 @@ const Experiences = () => {
         <motion.div
           initial={{ scaleY: 0 }}
           style={{ scaleY: scrollY }}
-          className="absolute h-full w-1 rounded-full bg-gray-300 origin-top"
+          className="absolute h-[95%] w-1 rounded-full bg-gray-300 origin-top"
         ></motion.div>
       </div>
     </div>

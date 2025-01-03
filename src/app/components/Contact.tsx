@@ -1,5 +1,5 @@
 "use client";
-import Heading from "./sub/Heading";
+import Heading from "@/components/sub/Heading";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -7,10 +7,13 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="h-screen lg:h-auto py-20 lg:py-40 xs:pb-20 px-96"
+      className="h-screen lg:h-auto py-20 lg:py-40 xs:pb-20"
     >
       <Heading text="Get In Touch" />
-      <div className="w-full h-full my-auto flex lg:flex-col justify-between lg:justify-center gap-x-20 lg:gap-x-0 gap-y-20 items-center">
+      <div
+        className="w-full h-[calc(100%-10rem)] my-auto flex lg:flex-col justify-between items-center 
+        lg:justify-center gap-x-20 lg:gap-x-0 gap-y-20"
+      >
         <motion.div
           initial={{ opacity: 0, x: -150 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -32,12 +35,14 @@ const Contact = () => {
         >
           <div className="w-full flex lg:flex-col gap-x-3 lg:gap-y-3">
             <input
-              className="w-full border border-yellow-500 rounded-md px-4 py-2 text-sm tracking-wider outline-none"
+              className="w-full border border-yellow-500 rounded-md px-4 py-2 text-sm 
+              tracking-wider outline-none"
               type="text"
               placeholder="Your Name"
             />
             <input
-              className="w-full border border-yellow-500 rounded-md px-4 py-2 text-sm tracking-wider outline-none"
+              className="w-full border border-yellow-500 rounded-md px-4 py-2 text-sm 
+              tracking-wider outline-none"
               type="email"
               placeholder="Your Email"
             />
