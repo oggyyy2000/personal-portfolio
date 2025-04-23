@@ -1,9 +1,11 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 import { heroIcons } from "@/assets";
+import BubbleThought from "@/components/sub/BubbleThought";
 import { useMotionValue, useTransform, motion, useSpring } from "framer-motion";
 import { useState } from "react";
+// import Link from "next/link";
 
 const Hero = () => {
   // check window size
@@ -59,22 +61,8 @@ const Hero = () => {
           className="flex flex-col items-center justify-center gap-y-3 font-light 
         capitalize"
         >
-          <motion.div
-            className="flex items-center justify-center"
-            style={{
-              rotateX: mouseMove ? rotateX : 0,
-              rotateY: mouseMove ? rotateY : 0,
-              transition: "0.1s",
-            }}
-          >
-            <Image
-              className="h-auto w-[150px]"
-              src={"/person.png"}
-              alt="person image"
-              width={400}
-              height={400}
-              priority={true} // special feature of nextjs to preload image as soon as possible
-            />
+          <motion.div className="flex items-center justify-center">
+            <BubbleThought />
             <motion.span
               className="absolute text-3xl font-semibold text-white"
               initial={{ scale: 0 }}

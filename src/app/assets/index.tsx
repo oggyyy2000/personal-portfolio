@@ -70,10 +70,10 @@ export const skillsData = [
   //   name: "Blender",
   //   icon: "/skills/blender.png",
   // },
-  {
-    name: "VS Code",
-    icon: "/skills/vscode.png",
-  },
+  // {
+  //   name: "VS Code",
+  //   icon: "/skills/vscode.png",
+  // },
   {
     name: "HTML",
     icon: "/skills/html.png",
@@ -87,6 +87,10 @@ export const skillsData = [
     icon: "/skills/js.png",
   },
   {
+    name: "TypeScript",
+    icon: "/skills/ts.png",
+  },
+  {
     name: "TailwindCSS",
     icon: "/skills/tailwind.png",
   },
@@ -98,10 +102,7 @@ export const skillsData = [
     name: "ReactJS",
     icon: "/skills/react.png",
   },
-  {
-    name: "TypeScript",
-    icon: "/skills/ts.png",
-  },
+  
   // {
   //   name: "AI",
   //   icon: "/skills/ai.png",

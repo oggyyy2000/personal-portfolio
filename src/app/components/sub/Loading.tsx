@@ -19,7 +19,13 @@ const Loading = () => {
       className="w-full h-full fixed top-0 left-0 flex items-center justify-center 
     bg-gradient-to-t from-yellow-50 to-red-50 z-50"
     >
-      <Image src="/spinner.gif" width={40} height={40} alt="spinner loading" />
+      <Image
+        src="/spinner.gif"
+        width={40}
+        height={40}
+        alt="spinner loading"
+        unoptimized
+      />
     </motion.div>
   );
 };
